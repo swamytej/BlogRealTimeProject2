@@ -1,0 +1,207 @@
+.content{
+    float:left;
+    width: 60%;
+    padding:0 0 0 30px;
+}
+.sidebar{
+    float:right;
+    width:30%;
+    padding:10px;
+    background-image: url("https://4kwallpapers.com/images/walls/thumbs_2t/8789.jpg");
+    background-size: cover;
+    height: 100%;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    border-bottom: 1px solid  #bbb;
+    padding: 0 0 10px 0;
+    color:black;
+    font-weight: bold;
+    font-size: 38px;
+}
+#date{
+    color:brown;
+    font-size:16px;
+    font-style: italic;
+}
+body {
+    background-image: url("https://image.winudf.com/v2/image1/Y29tLm1vYmlsZXVuaXZlcnNpdHkubmF0dXJlX3NjcmVlbl8wXzE1NDMyOTM0NThfMDMy/screen-0.jpg?fakeurl=1&type=.webp");
+    background-size: cover;
+}
+#la{
+    background-color:yellow;
+}
+.login{
+    margin-top: 200px;
+    margin-left: 500px;
+    border: 2px solid cyan;
+    font-weight: bold;
+    width: 400px;
+    text-align: center;
+    border-radius: 15px;
+}
+button{
+        border: 1px solid darkcyan;
+        color: black;
+        height: 30px;
+        width: 90px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+        background-color: lightskyblue;
+}
+#hr1{
+    border: 1px solid cyan;
+}
+button:hover{
+    border: 2px solid cyan;
+    background-color: darkcyan;
+    color: white;
+
+}
+.hello{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px
+}
+#div1,div4{
+    alignment: center;
+    text-align: center;
+    border: 1px solid cyan;
+    margin-right: 100px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    width: 80%;
+}
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+    text-decoration: none;
+}
+.sidebar1{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: black;
+    transition: all .5s ease;
+    top: 0px;
+}
+.sidebar1 header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background-color: midnightblue;
+    user-select: none;
+}
+.sidebar1 #u1 a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255,255,.1);
+    border-bottom: 1px solid black;
+    transition: .4s;
+
+}
+#u1 li:hover a{
+    padding-left:50px;
+}
+.sidebar1 #u1 a i{
+    margin-right: 16px;
+
+}
+#check{
+    display: none;
+
+}
+label #btn,label #cancel{
+    position: absolute;
+    cursor: pointer;
+    background: darkcyan;
+    border-radius: 3px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    transition: all .5s;
+}
+label #cancel{
+    z-index: 1111;
+    left: -195px;
+    top: 30px;
+    font-size: 30px;
+    color: yellow;
+    padding: 4px 8px;
+    transition: all .5s ease;
+}
+#check:checked ~.sidebar1{
+    left: 0;
+}
+#check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+
+}
+#check:checked ~ label #cancel{
+    left: 195px;
+}
+#check:checked ~ section{
+    margin-left: 250px;
+}
+section{
+    background-position: center;
+    background-size: cover;
+    transition: all .5s;
+}
+#divs{
+    alignment: center;
+    text-align: center;
+    border: 1px solid olivedrab;
+    margin-right: 100px;
+    margin-left: 200px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    width: 80%;
+    height: 130%;
+}
+.jumbotron {
+    alignment: center;
+    text-align: center;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    margin-top: 200px;
+    width: 80%;
+    height: 130%;
+    display: inline-block;
+}
+#swamy1{
+    border: 1px solid darkorange;
+    font-weight: bold;
+    text-align: center;
+}
+#div8{
+    font-weight: bold;
+    margin-top: 200px;
+    margin-left: 300px;
+    margin-right: 100px;
+    font-size: 20px;
+    border: 5px solid cyan;
+}
+#btun{
+    background-color: greenyellow;
+    border-radius: 15px;
+}

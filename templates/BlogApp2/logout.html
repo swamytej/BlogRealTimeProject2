@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center" class="hello">
+        <h3> You for visiting..!</h3><br/>
+        <p>I hope you enjoyed </p>
+        <h4>Login in Again</h4>
+        <a href="/accounts/login/"><button>Login</button></a><br><br>
+        <a href="/"><button>Back</button></a>
+
+    </div>
+{% endblock %}
+</body>
+</html>

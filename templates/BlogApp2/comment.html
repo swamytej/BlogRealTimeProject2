@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'BlogApp2/base.html' %}
+{% block content %}
+    <div id="div4">
+    <h2>Comment Form></h2>
+    {% with comments.count as comments_count %}
+        <h2>{{ comments_count }}Comment{{ comments_count|pluralize }}</h2>
+    {% endwith %}
+    {% if comments %}
+        {% for comment in comments %}
+            <p id="ch">comment {{ forloop.counter }} by {{ comment.name }} on {{comment.created}}</p>
+                <div class="cb">{{ comment.body|linebreaks }}</div>
+                <hr/>
+        {% endfor %}
+    {% else %}
+        <p>There are no comments for the post..!</p>
+    {% endif %}
+    {% if csubmit %}
+        <h2>Your posted-comments Added succesfully..!</h2>
+    {% else %}
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" name="" value="Comment">
+        </form>
+    {% endif %}
+{% endblock %}
+    </div>

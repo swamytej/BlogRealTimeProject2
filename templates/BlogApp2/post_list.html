@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% extends 'BlogApp2/base.html' %}
+{% load static %}
+{% block title %}{{ user.username|title }}{% endblock %}
+{% block content %}
+    <input type="checkbox" name=" " id="check">
+    <label for="check">
+        <b>Click Here</b>
+        <i class="fas fa-bars" id=btn></i>
+        <i class="fas fa-times" id="cancel"></i>
+
+    </label>
+    <div class="sidebar1">
+        <header>{{ user.username|title }}</header>
+    <ul id="u1">
+        <li><a href="/profile/"><i class="fas fa-qrcode"></i>View-Profile</a> </li>
+        <li><a href="/{{ user.id }}/userupdate/"><i class="fas fa-link"></i>Edit-profile</a> </li>
+        <li><a href="/contact/"><i class="fas fa-envelope"></i>Email</a></li>
+        <li><a href="/logout/"><i class="far fa-question-circle"></i>Logout</a></li>
+    </ul>
+    </div>
+    <h1>{{ user.username|title}} Blog</h1>
+    <p align="right" style="color: black"><b>Welcome: {{ user.username|title}}</b></p>
+    <a href="/post/"><button id="btun">Add Post</button></a>
+    <hr/>
+    {% if tag %}
+        <h2>Posts tagged with "{{ tag.name }}"</h2>
+    {% endif %}
+    {%for post in postlist%}
+        <h2><a href="{{post.get_absolute_url}}">{{post.title}}
+            {%   with x=post.images.name|slice:"-3::" %}
+        {{ x }}
+
+           {% if x == "jpg"%}
+                    <img  src="{% static 'images/book_img.jpg' %}" width="50" height="40"/>
+           {% elif x == "mp4" %}
+               <video autoplay="autoplay" controls="controls" width="50px" height="50px">
+						<source src="/media/{{ post.images }}/" type="video/mp4"/>
+               </video>
+           {% elif x == "pdf" %}
+               <!--<p>Downloadable file</p>-->
+               <ol>
+                    <li>
+                        <a href="/media/{{ post.images }}">pdf file</a>
+                    </li>
+               </ol>
+           {% endif %}
+        </a> </h2>
+                <hr>
+            <a href="/update/ {{ post.id }}"><button id="btun">Update</button></a>
+            <a href="/delete1/{{ post.id }}"><button id="btun">Delete-post</button></a>
+                <br/><br/>
+        <p>
+            Tags:
+            {% for tag in post.tags.all %}
+                <a href="{%url "post_list_by_tag_name" tag.slug %}">{{tag.name}}</a>
+                {%if not forloop.last%}, {%endif%}{%endfor%}
+        </p>
+        <p id='date'>Published on {{ post.publish}} by {{ post.author|title }}</p>
+        {{ post.body| truncatewords:30|linebreaks }}
+        {% endwith %}
+    {% endfor %}
+    {%include 'BlogApp2/pagination.html' with page=postlist%}
+    <br/><br/>
+    {%comment  %}{% include 'BlogApp1/pagination.html' with page=page_obj %}{% endcomment %}
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+{% endblock %}

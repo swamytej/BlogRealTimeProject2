@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'BlogApp2/base.html' %}
+{% block content %}
+
+<div id="div8">
+    <h2 align="center">{{ user.username }} Blog</h2>
+    <hr style="border: 2px solid cyan">
+    <ul>
+        <li>User-id: {{ user.id }}</li>
+        <li> First name:    {{ user.first_name | title }}</li>
+        <li>Last name:     {{ user.last_name }}</li>
+        <li>Email:        {{ user.email }}</li>
+        <li>Username:      {{ user.username }}</li>
+    </ul>
+</div>
+    <a href="/tag/"><button type="button">Back</button></a>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'BlogApp2/base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete-page</title>
+</head>
+<body>
+    <h1>Delete {{comment.name}} comments ???</h1><hr>
+    <form method="post">
+        {%csrf_token%}
+        Yes : <button style="width: auto" type="submit">Delete-Comment</button> <br /> <br />
+        NO(stop) : <a href="/detail/{{comment.id}}">Cancel-Delete</a>
+    </form>
+{%endblock %}
+
+</body>
+</html>

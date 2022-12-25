@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'BlogApp2/base.html'%}
+{% block content %}
+    <div id="div1">
+        <h1><b> {{user.username}}</b></h1>
+        <form style="font-weight: bold" method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <br/>
+            <a href="/thank/"><button type="submit">Add Post</button></a> |
+            <a href="/tag/"><button type="button">Homepage</button></a>
+        </form>
+    <a href="/logout/"><button>logout</button></a>
+    </div>
+{% endblock %}

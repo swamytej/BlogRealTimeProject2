@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/blog.css '%}" rel="stylesheet">
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1 style="color: black">Welcome to {{ user.username|title }} Blog website</h1><br/>
+        <p> Create your own blog </p><br/>
+        <h3 style="color: lightgreen">I LOVE NATURE..!</h3>
+        <br/>
+        <a href="/tag/"><button style="font-weight: bold">Get started</button></a><br/><br/>
+        <!---<span style="font-weight: bold">NewUser:  </span><a href="/signup/"><button>Signup</button></a>--->
+    </div>
+
+{% endblock %}
+
+</body>
+</html>
